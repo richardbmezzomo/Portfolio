@@ -1,8 +1,8 @@
 export default function HomeScreen() {
   return (
     <>
-      <section className="-z-10 h-screen w-full bg-white pt-12 text-black lg:pt-20">
-        <main className="px-6 pt-14 lg:px-20 lg:py-24">
+      <section className="justify-left -z-10 flex h-screen w-full items-center bg-white pt-12 text-black lg:pt-20">
+        <main className="h-auto px-6 pt-14 lg:px-20 lg:py-24">
           <p className="mb-2 font-mono text-sm lg:mb-4 lg:text-lg">
             olá, meu nome é
           </p>

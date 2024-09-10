@@ -5,17 +5,17 @@ import Carrousel from '../Carrousel/page'
 
 export default function About() {
   return (
-    <>
+    <section className="h-screen w-full">
       <header>
         <Carrousel />
       </header>
-      <section className="px-6 lg:px-20">
+      <main className="px-6 lg:px-20">
         <div className="sm:flex sm:items-center sm:justify-between sm:gap-8 lg:flex lg:items-center lg:justify-between lg:gap-8">
           <div>
-            <h1 className="pb-3 font-sans text-xl font-bold text-black lg:pb-6 lg:text-4xl">
+            <h1 className="pb-3 font-sans text-xl font-bold text-black lg:pb-6 lg:text-5xl">
               Sobre mim
             </h1>
-            <div className="flex flex-col gap-3 font-sans text-sm text-black sm:max-w-sm lg:max-w-xl">
+            <div className="flex flex-col gap-3 font-sans text-sm text-black sm:max-w-sm lg:max-w-xl lg:text-lg">
               <p>
                 Desenvolvedor e entusiasta da tecnologia, atualmente cursando
                 Análise e Desenvolvimento de Sistemas.
@@ -41,11 +41,15 @@ export default function About() {
             </div>
           </div>
           <div className="flex flex-col items-center justify-center pt-6 lg:pt-0">
-            <Image src={profile} alt="foto de Richard Mezzomo" />
+            <Image
+              src={profile}
+              alt="foto de Richard Mezzomo"
+              className="w-[355px]"
+            />
             <SocialMedias spacing="pt-10 lg:pt-6" />
           </div>
         </div>
-      </section>
-    </>
+      </main>
+    </section>
   )
 }
