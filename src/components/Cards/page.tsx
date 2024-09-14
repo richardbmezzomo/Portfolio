@@ -23,7 +23,7 @@ export default function Cards({
 }: CardProps) {
   return (
     <section className="flex flex-col">
-      <Image src={imageSrc} alt="" />
+      <Image src={imageSrc} alt="" className="md:max-w-xl lg:max-w-xl" />
       <div className="flex max-w-xl items-center justify-between lg:justify-between">
         <div>
           <h1 className="pb-1 pt-3 font-sans text-xl font-bold md:text-2xl lg:pb-1 lg:pt-6 lg:text-3xl">

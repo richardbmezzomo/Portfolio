@@ -5,7 +5,7 @@ import Carrousel from '../Carrousel/page'
 
 export default function About() {
   return (
-    <section className="h-screen w-full">
+    <section className="h-full h-screen w-full bg-white">
       <header>
         <Carrousel />
       </header>
@@ -41,11 +41,7 @@ export default function About() {
             </div>
           </div>
           <div className="flex flex-col items-center justify-center pt-6 lg:pt-0">
-            <Image
-              src={profile}
-              alt="foto de Richard Mezzomo"
-              className="w-[355px]"
-            />
+            <Image src={profile} alt="foto de Richard Mezzomo" className="" />
             <SocialMedias spacing="pt-10 lg:pt-6" />
           </div>
         </div>

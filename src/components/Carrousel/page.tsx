@@ -28,7 +28,7 @@ export default function Carrousel() {
         <motion.div
           drag="x"
           dragConstraints={{ right: 0, left: -width! }}
-          className="flex cursor-grab select-none gap-4 pb-10 pt-6 font-sans text-4xl font-bold text-gray lg:text-7xl"
+          className="text-gray2 flex cursor-grab select-none gap-4 pb-10 pt-6 font-sans text-4xl font-bold lg:text-7xl"
         >
           {stacks.map((stack) => (
             <span key={stack}>{stack}</span>

@@ -4,7 +4,7 @@ import rocket from '@/assets/icons/rocket.svg'
 
 export default function Contact() {
   return (
-    <section className="p-6 sm:px-9 md:px-20">
+    <section className="bg-white p-6 sm:px-9 md:px-20">
       <div className="mx-auto my-0 lg:flex lg:max-w-3xl lg:flex-col">
         <header>
           <span className="flex gap-3 font-mono text-sm lg:text-lg">

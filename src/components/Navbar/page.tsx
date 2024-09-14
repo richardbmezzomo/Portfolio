@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed z-10 w-screen bg-gray  px-6 py-4 lg:flex lg:items-center lg:justify-between lg:px-20 lg:py-6">
+      <nav className="fixed z-10 w-screen bg-gray px-6 py-4 lg:flex lg:items-center lg:justify-between lg:px-20 lg:py-6">
         <div className="">
           <div className="flex items-center justify-between">
             <span>
@@ -66,7 +66,7 @@ export default function Navbar() {
         </div>
       </nav>
       {isOpen && (
-        <div className="fixed mt-[3.31rem] h-screen w-screen bg-white px-6 pt-14 lg:hidden">
+        <div className="fixed z-50 mt-[3.31rem] h-screen w-screen bg-white px-6 pt-14 lg:hidden">
           <ul className="flex flex-col gap-10 font-mono text-lg">
             <li>
               <a href="">Sobre mim</a>

@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function HomeScreen() {
   return (
     <>
-      <section className="-z-10 flex h-screen w-full justify-between bg-[#F8F7F3] pt-12 text-black">
+      <section className="-z-10 flex h-screen w-full justify-between bg-white pt-12 text-black">
         <main className="h-auto px-6 pt-14 lg:flex lg:flex-col lg:justify-center lg:pl-20 lg:pt-0">
           <p className="text-gray-500 mb-2 font-mono text-sm lg:mb-4 lg:text-lg">
             olá, meu nome é
@@ -34,13 +34,13 @@ export default function HomeScreen() {
           </div>
         </main>
 
-        <div className="-bottom-[75px] right-[-120px] mb-56 flex rotate-90 items-center lg:-bottom-[52px]">
+        <div className="absolute -bottom-[75px] right-[-120px] mb-56 flex rotate-90 items-center lg:-bottom-[52px]">
           <Link href="mailto:richardbbmm@gmail.com" passHref legacyBehavior>
             <a className="text-gray-600 font-mono text-sm lg:text-lg">
               richardbbmm@gmail.com
             </a>
           </Link>
-          <div className="ml-4 h-0.5 w-32 bg-black"></div>
+          <div className="ml-4 h-px w-32 bg-black"></div>
         </div>
       </section>
     </>

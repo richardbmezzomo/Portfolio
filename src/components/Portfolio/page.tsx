@@ -3,7 +3,7 @@ import gitHubBlog from '@/assets/images/github-blog.png'
 
 export default function Portfolio() {
   return (
-    <section className="px-6 py-5 lg:h-screen lg:px-20 lg:py-8">
+    <section className="bg-white px-6 py-5 lg:h-screen lg:px-20 lg:py-8 lg:pt-10">
       <header>
         <h1 className="pb-3 font-sans text-xl font-bold text-black lg:pb-4 lg:text-4xl">
           Projetos

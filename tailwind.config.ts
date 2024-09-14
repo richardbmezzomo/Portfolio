@@ -19,7 +19,8 @@ const config: Config = {
       colors: {
         white: '#F8F4F0',
         black: '#222222',
-        gray: 'rgba(34, 34, 34, 0.40)',
+        gray: '#A2A09E',
+        gray2: 'rgba(162, 160, 158, 0.2)',
       },
     },
   },
