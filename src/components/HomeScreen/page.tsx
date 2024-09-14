@@ -1,9 +1,11 @@
+import Link from 'next/link'
+
 export default function HomeScreen() {
   return (
     <>
-      <section className="justify-left -z-10 flex h-screen w-full items-center bg-white pt-12 text-black lg:pt-20">
-        <main className="h-auto px-6 pt-14 lg:px-20 lg:py-24">
-          <p className="mb-2 font-mono text-sm lg:mb-4 lg:text-lg">
+      <section className="relative -z-10 flex h-screen w-full justify-between bg-[#F8F7F3] pt-12 text-black">
+        <main className="h-auto px-6 pt-14 lg:flex lg:flex-col lg:justify-center lg:pl-20 lg:pt-0">
+          <p className="text-gray-500 mb-2 font-mono text-sm lg:mb-4 lg:text-lg">
             olá, meu nome é
           </p>
           <h1 className="mb-2 font-sans text-4xl font-bold lg:mb-4 lg:text-6xl">
@@ -12,7 +14,7 @@ export default function HomeScreen() {
           <h2 className="mb-2 font-sans text-4xl font-bold lg:mb-4 lg:text-6xl">
             Transformo ideias em código.
           </h2>
-          <p className="fonst-sans text-sm lg:text-lg">
+          <p className="text-gray-600 font-sans text-sm lg:text-lg">
             Desenvolvedor focado em criar experiências digitais, especialmente
             no desenvolvimento web.
             <br />
@@ -21,15 +23,23 @@ export default function HomeScreen() {
           </p>
 
           <div className="flex w-full items-center justify-center pt-14 lg:flex lg:justify-start lg:pt-16">
-            <a
-              href="https://wa.me/+5548984864299"
-              target="_blank"
-              className="border border-black px-3 py-2 font-mono text-sm lg:px-10 lg:py-3 lg:text-lg"
-            >
-              ENTRE EM CONTATO
-            </a>
+            <Link href="https://wa.me/+5548984864299" target="_blank">
+              <div className="border border-black px-6 py-2 font-mono text-sm transition-all duration-300 hover:bg-black hover:text-white lg:px-12 lg:py-3 lg:text-lg">
+                ENTRE EM CONTATO
+              </div>
+            </Link>
           </div>
         </main>
+
+        {/* Div rotacionada e fixada no lado inferior direito */}
+        <button className="absolute -bottom-[75px] right-[-120px] mb-56 flex rotate-90 items-center">
+          <Link href="mailto:richardbbmm@gmail.com">
+            <div className="text-gray-600 font-mono text-sm">
+              richardbbmm@gmail.com
+            </div>
+          </Link>
+          <div className="ml-4 h-0.5 w-32 bg-black"></div>
+        </button>
       </section>
     </>
   )
