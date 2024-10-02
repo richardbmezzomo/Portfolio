@@ -119,7 +119,7 @@ export default function FormContact(): JSX.Element {
         </div>
         <textarea
           placeholder="Sua mensagem"
-          className="h-44 w-full resize-none border border-black p-1 text-sm placeholder:text-sm"
+          className="h-44 w-full resize-none border border-black bg-white p-1 text-sm placeholder:text-sm"
           onChange={(e) => setMessage(e.target.value)}
           value={message}
           required
