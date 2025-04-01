@@ -7,6 +7,15 @@ import CloseIcon from '../icons/CloseIcon'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [activeLink, setActiveLink] = useState('#hello')
+
+  const handleActiveLink = (href: string) => {
+    return `border-b-2 transition-all md:py-4 lg:px-8 ${
+      activeLink === href
+        ? 'border-b-cyan-400 text-slate-100'
+        : 'border-transparent hover:border-b-cyan-400'
+    }`
+  }
 
   return (
     <header className="w-full rounded-t-lg border-x border-t border-slate-700 bg-slate-900 text-slate-500">
@@ -17,19 +26,22 @@ export function Header() {
         <nav className="hidden flex-1 lg:flex">
           <Link
             href={'#hello'}
-            className="border-b-2 border-transparent transition-all hover:border-b-cyan-400 md:py-4 lg:border-l-1 lg:border-l-slate-700 lg:px-8"
+            onClick={() => setActiveLink('#hello')}
+            className={handleActiveLink('#hello')}
           >
             _hello
           </Link>
           <Link
             href={'#about'}
-            className="border-b-2 border-transparent transition-all hover:border-b-cyan-400 md:py-4 lg:px-8 lg:border-x-1 lg:border-x-slate-700"
+            onClick={() => setActiveLink('#about')}
+            className={handleActiveLink('#about')}
           >
             _sobre-mim
           </Link>
           <Link
             href={'#projects'}
-            className="border-b-2 border-transparent transition-all hover:border-b-cyan-400 md:py-4 lg:px-8 lg:border-r-1 lg:border-r-slate-700 "
+            onClick={() => setActiveLink('#projects')}
+            className={handleActiveLink('#projects')}
           >
             _projetos
           </Link>
@@ -38,7 +50,8 @@ export function Header() {
         <div className="hidden lg:flex">
           <Link
             href={'#contacts'}
-            className="border-b-2 border-transparent transition-all hover:border-b-cyan-400 md:py-4 lg:border-l-1 lg:border-l-slate-700 lg:px-8"
+            onClick={() => setActiveLink("#contacts")}
+            className={handleActiveLink("#contacts")}
           >
             _contate-me
           </Link>
