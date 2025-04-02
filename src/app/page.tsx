@@ -1,10 +1,7 @@
-import { Header } from "@/components/Header/Header"
-
 export default function Home() {
   return (
-    <div className="">
-      <Header />
+    <div className="w-full text-white">
+      <h1 className="text-2xl">Bem-vindo!</h1>
     </div>
-
-  );
+  )
 }

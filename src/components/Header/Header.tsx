@@ -5,7 +5,7 @@ import Link from 'next/link'
 import MenuIcon from '../icons/MenuIcon'
 import CloseIcon from '../icons/CloseIcon'
 
-export function Header() {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('#hello')
 
