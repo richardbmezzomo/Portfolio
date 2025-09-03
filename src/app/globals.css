@@ -2,12 +2,18 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #de0505;
+  --title-foreground: #90a1b9;
+  --heading-foreground: #f8fafc;
+  --link-foreground: #ffa1ad;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-title: var(--title-foreground);
+  --color-heading-foreground: var(--heading-foreground);
+  --color-link-foreground: var(--link-foreground);
 }
 
 @media (prefers-color-scheme: dark) {

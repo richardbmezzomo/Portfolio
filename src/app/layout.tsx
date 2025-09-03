@@ -19,17 +19,20 @@ const firaCode = Fira_Code({
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-br">
       <body className={`${firaCode.className} bg-slate-950`}>
-        <Container>
-          <Header />
-          <main className='flex-grow'>{children}</main>
-          <Footer />
-        </Container>
+        {/* Header fixo, full-width; o próprio Header deve conter <Container> internamente */}
+        <Header />
+
+        {/* Conteúdo compensa header e footer fixos */}
+        <main className="">
+          <Container>{children}</Container>
+        </main>
+
+        {/* Footer fixo, full-width; o próprio Footer deve conter <Container> internamente */}
+        <Footer />
       </body>
     </html>
   )
