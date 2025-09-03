@@ -1,7 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-input:focus {
-    outline: none;
-  }  
+:root {
+  --background: #ffffff;
+  --foreground: #de0505;
+  --title-foreground: #90a1b9;
+  --heading-foreground: #f8fafc;
+  --link-foreground: #ffa1ad;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-title: var(--title-foreground);
+  --color-heading-foreground: var(--heading-foreground);
+  --color-link-foreground: var(--link-foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
