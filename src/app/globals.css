@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -6,6 +6,8 @@
   --title-foreground: #90a1b9;
   --heading-foreground: #f8fafc;
   --link-foreground: #ffa1ad;
+  --header-h: 64px; /* h-16 */
+  --footer-h: 64px; /* h-16 */
 }
 
 @theme inline {
@@ -22,3 +24,7 @@
     --foreground: #ededed;
   }
 }
+
+html {
+  overflow-x: clip;
+} /* previne scroll horizontal acidental */

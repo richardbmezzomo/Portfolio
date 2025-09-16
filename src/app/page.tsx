@@ -6,20 +6,17 @@ export default function Home() {
     <>
       <section
         id="hello"
-        // ocupa a viewport e respeita header fixo (se seu header ~64px)
-        className="relative mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl items-center"
+        className="
+          relative mx-auto flex
+          min-h-[calc(100svh-8rem)]
+          max-w-7xl items-center
+          overflow-hidden
+          px-4 sm:px-6 lg:px-8
+        "
       >
-        <div className="absolute left-[11%] hidden h-full w-full md:block">
-          <Image
-            src={bg_image}
-            alt="Background"
-            fill // faz a imagem ocupar todo o container
-            className=""
-            priority
-          />
-        </div>
+
         {/* grid: 1 col no mobile, 2 col no desktop */}
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
           {/* COLUNA ESQUERDA (texto) */}
           <div className="self-center lg:self-start">
             <p className="mb-2 text-base text-slate-400/90">Olá, meu nome é</p>
@@ -35,9 +32,7 @@ export default function Home() {
 
             {/* bloco “código” */}
             <div className="mt-10 rounded-xl border border-slate-800 bg-slate-900/50 p-4 text-sm leading-relaxed shadow-[inset_0_0_0_1px_rgba(15,23,42,0.35)] sm:p-5 sm:text-base">
-              <p className="text-slate-400">
-                // Encontre meu perfil no Github:
-              </p>
+              <p className="text-slate-400">// Encontre meu perfil no Github:</p>
               <p className="mt-1">
                 <span className="text-indigo-400">const </span>
                 <span className="text-teal-300">githubLink</span>
@@ -49,7 +44,7 @@ export default function Home() {
                   className="text-sky-300 underline decoration-dotted underline-offset-4 hover:opacity-90"
                 >
                   "https://github.com/
-                  <br className='block sm:hidden' />
+                  <br className="block sm:hidden" />
                   richardbmezzomo"
                 </a>
                 <span className="text-slate-200">;</span>
@@ -60,7 +55,6 @@ export default function Home() {
           {/* COLUNA DIREITA (snippets) — some no mobile */}
           <div className="relative hidden lg:block">
             {/* glow de fundo */}
-            <div className="pointer-events-none absolute -inset-6 -z-10 rounded-3xl bg-gradient-to-b from-indigo-500/10 via-cyan-400/5 to-transparent blur-2xl" />
 
             <div className="flex flex-col gap-6">
               <CodeCard

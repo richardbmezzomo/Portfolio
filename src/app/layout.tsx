@@ -1,15 +1,15 @@
+// app/layout.tsx
 import type { Metadata } from 'next'
 import './globals.css'
+import { Fira_Code } from 'next/font/google'
+import Header from '@/components/Header/Header'
+import Footer from '@/components/Footer/Footer'
+import BackgroundLayer from '@/components/BackgroundLayer'
 
 export const metadata: Metadata = {
   title: 'Richard B Mezzomo',
   description: 'Portfolio',
 }
-
-import { Fira_Code } from 'next/font/google'
-import Container from '@/components/Container/Container'
-import Header from '@/components/Header/Header'
-import Footer from '@/components/Footer/Footer'
 
 const firaCode = Fira_Code({
   subsets: ['latin'],
@@ -19,19 +19,18 @@ const firaCode = Fira_Code({
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className="overflow-x-clip">
       <body className={`${firaCode.className} bg-slate-950`}>
-        {/* Header fixo, full-width; o próprio Header deve conter <Container> internamente */}
+        <BackgroundLayer /> {/* fundo travado */}
         <Header />
-
-        {/* Conteúdo compensa header e footer fixos */}
-        <main className="">
-          <Container>{children}</Container>
+        <main className="min-h-[calc(100svh-8rem)] pt-16 pb-16">
+          {/* 8rem = 64px header + 64px footer; ajuste se suas alturas forem outras */}
+          {children}
         </main>
-
-        {/* Footer fixo, full-width; o próprio Footer deve conter <Container> internamente */}
         <Footer />
       </body>
     </html>
