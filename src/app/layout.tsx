@@ -28,7 +28,6 @@ export default function RootLayout({
         <BackgroundLayer /> {/* fundo travado */}
         <Header />
         <main className="min-h-[calc(100svh-8rem)] pt-16 pb-16">
-          {/* 8rem = 64px header + 64px footer; ajuste se suas alturas forem outras */}
           {children}
         </main>
         <Footer />

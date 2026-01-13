@@ -7,7 +7,6 @@ import bg_image from '@/assets/background_blurs.svg'
 export default function BackgroundLayer() {
   return (
     <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      imagem ocupa a viewport, travada atrás de tudo
       <Image
         src={bg_image}
         alt=""

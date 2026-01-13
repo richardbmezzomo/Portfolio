@@ -20,16 +20,16 @@ export default function Header() {
   }, [isOpen])
 
   const handleActiveLink = (href: string) =>
-    `border-b-2 transition-all md:py-4 lg:px-8 ${
+    `border-b-2 border-solid transition-all md:py-4 lg:px-8 ${
       activeLink === href
         ? 'border-b-cyan-400 text-slate-100'
-        : 'border-transparent hover:border-b-cyan-400'
+        : 'border-b-transparent hover:border-b-cyan-400'
     }`
 
   return (
     <header
       // header FIXO no topo, cobrindo o conteúdo
-      className="fixed inset-x-0 top-0 z-50 h-16 border-b border-slate-700/80 bg-slate-900/80 text-slate-500 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60"
+      className="fixed inset-x-0 top-0 z-50 h-16 border-b border-slate-700/80 bg-slate-900/80 text-slate-500 backdrop-blur supports-backdrop-filter:bg-slate-900/60"
     >
       <div className="mx-auto flex h-full items-center justify-between lg:justify-normal lg:gap-12">
         <span className="px-6 text-slate-400">richard_b_mezzomo</span>
@@ -86,7 +86,7 @@ export default function Header() {
         createPortal(
           <div
             id="mobile-nav"
-            className="fixed inset-x-0 top-16 bottom-0 z-[60] animate-[fadeIn_150ms_ease-out] overflow-y-auto border-t border-slate-800 bg-slate-900 lg:hidden"
+            className="fixed inset-x-0 top-16 bottom-0 z-60 animate-[fadeIn_150ms_ease-out] overflow-y-auto border-t border-slate-800 bg-slate-900 lg:hidden"
           >
             <p className="px-6 pt-4 pb-3 text-slate-400"># navigate:</p>
             <nav className="flex flex-col">

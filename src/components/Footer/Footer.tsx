@@ -31,7 +31,7 @@ export default function Footer() {
           <Link
             href="https://github.com/richardbmezzomo"
             target="_blank"
-            className="transition-colors hover:text-cyan-400 flex items-center gap-2 pr-6"
+            className="flex items-center gap-2 pr-6 transition-colors hover:text-cyan-400"
           >
             <p>@richardbmezzomo</p>
             <RiGithubFill size={22} />
@@ -57,7 +57,7 @@ export default function Footer() {
           <Link
             href="https://github.com/richardbmezzomo"
             target="_blank"
-            className=" transition-colors hover:text-cyan-400"
+            className="transition-colors hover:text-cyan-400"
           >
             <RiGithubFill size={22} />
           </Link>

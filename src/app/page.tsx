@@ -1,23 +1,11 @@
-import Image from 'next/image'
-import bg_image from '../assets/background_blurs.svg'
-
 export default function Home() {
   return (
     <>
       <section
         id="hello"
-        className="
-          relative mx-auto flex
-          min-h-[calc(100svh-8rem)]
-          max-w-7xl items-center
-          overflow-hidden
-          px-4 sm:px-6 lg:px-8
-        "
+        className="relative mx-auto flex min-h-[calc(100svh-8rem)] max-w-7xl items-center overflow-hidden px-4 sm:px-6 lg:px-8"
       >
-
-        {/* grid: 1 col no mobile, 2 col no desktop */}
         <div className="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-          {/* COLUNA ESQUERDA (texto) */}
           <div className="self-center lg:self-start">
             <p className="mb-2 text-base text-slate-400/90">Olá, meu nome é</p>
 
@@ -32,7 +20,9 @@ export default function Home() {
 
             {/* bloco “código” */}
             <div className="mt-10 rounded-xl border border-slate-800 bg-slate-900/50 p-4 text-sm leading-relaxed shadow-[inset_0_0_0_1px_rgba(15,23,42,0.35)] sm:p-5 sm:text-base">
-              <p className="text-slate-400">// Encontre meu perfil no Github:</p>
+              <p className="text-slate-400">
+                // Encontre meu perfil no Github:
+              </p>
               <p className="mt-1">
                 <span className="text-indigo-400">const </span>
                 <span className="text-teal-300">githubLink</span>
