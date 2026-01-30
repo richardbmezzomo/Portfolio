@@ -1,4 +1,3 @@
-// components/BackgroundLayer.tsx
 'use client'
 
 import Image from 'next/image'
@@ -10,9 +9,10 @@ export default function BackgroundLayer() {
       <Image
         src={bg_image}
         alt=""
-        fill
+        width={1128}
+        height={940}
         priority
-        className="object-cover object-[70%_40%]" // puxe o foco pra direita
+        className="absolute top-1/2 right-0 translate-x-[10%] -translate-y-1/2"
       />
     </div>
   )
