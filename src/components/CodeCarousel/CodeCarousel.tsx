@@ -157,10 +157,11 @@ export function CodeCarousel() {
 
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center">
-      {/* Blur colorido de fundo - fixo, centralizado atrás dos cards */}
-      <div className="pointer-events-none fixed top-1/2 right-[12%] -z-10 -translate-y-1/2">
-        <div className="absolute -top-16 -left-16 h-64 w-64 rounded-full bg-indigo-500/40 blur-[100px]" />
-        <div className="absolute top-0 -right-8 h-56 w-56 rounded-full bg-teal-500/35 blur-[90px]" />
+      {/* Blur colorido de fundo - fixo, atrás dos cards */}
+      <div className="pointer-events-none fixed top-1/2 right-[25%] -z-10 -translate-y-1/2">
+        <div className="absolute -top-80 -left-20 h-80 w-80 rounded-full bg-indigo-500/40 blur-[120px]" />
+        <div className="absolute top-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-teal-500/35 blur-[110px]" />
+        <div className="absolute top-60 -right-10 h-80 w-80 rounded-full bg-violet-500/30 blur-[120px]" />
       </div>
 
       <div className="flex w-full flex-col items-center gap-4">
