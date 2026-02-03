@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="fixed inset-x-0 bottom-0 z-50 h-16 border-t border-slate-700/80 bg-slate-900/80 text-slate-500 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60">
+    <footer className="fixed inset-x-0 bottom-0 z-50 h-16 border-t border-slate-700/80 bg-slate-900/80 text-slate-500 backdrop-blur supports-backdrop-filter:bg-slate-900/60">
       <div className="mx-auto flex h-full items-center justify-between lg:justify-normal">
         {/* Texto à esquerda */}
         <span className="flex h-full items-center border-r border-slate-700/80 px-6 font-mono text-slate-400">

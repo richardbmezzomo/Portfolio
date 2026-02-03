@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import MenuIcon from '../icons/MenuIcon'
 import CloseIcon from '../icons/CloseIcon'
@@ -8,7 +9,7 @@ import { createPortal } from 'react-dom'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [activeLink, setActiveLink] = useState('#hello')
+  const pathname = usePathname()
 
   // (opcional) trava o scroll do body quando o menu mobile está aberto
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function Header() {
 
   const handleActiveLink = (href: string) =>
     `border-b-2 border-solid transition-all md:py-4 lg:px-8 ${
-      activeLink === href
+      pathname === href
         ? 'border-b-cyan-400 text-slate-100'
         : 'border-b-transparent hover:border-b-cyan-400'
     }`
@@ -36,35 +37,19 @@ export default function Header() {
 
         {/* Menu desktop */}
         <nav className="hidden flex-1 lg:flex">
-          <Link
-            href="#hello"
-            onClick={() => setActiveLink('#hello')}
-            className={handleActiveLink('#hello')}
-          >
+          <Link href="/" className={handleActiveLink('/')}>
             _hello
           </Link>
-          <Link
-            href="#about"
-            onClick={() => setActiveLink('#about')}
-            className={handleActiveLink('#about')}
-          >
+          <Link href="/about" className={handleActiveLink('/about')}>
             _sobre-mim
           </Link>
-          <Link
-            href="#projects"
-            onClick={() => setActiveLink('#projects')}
-            className={handleActiveLink('#projects')}
-          >
+          <Link href="/projects" className={handleActiveLink('/projects')}>
             _projetos
           </Link>
         </nav>
 
         <div className="hidden lg:flex">
-          <Link
-            href="#contacts"
-            onClick={() => setActiveLink('#contacts')}
-            className={handleActiveLink('#contacts')}
-          >
+          <Link href="/contact" className={handleActiveLink('/contact')}>
             _contate-me
           </Link>
         </div>
@@ -91,28 +76,28 @@ export default function Header() {
             <p className="px-6 pt-4 pb-3 text-slate-400"># navigate:</p>
             <nav className="flex flex-col">
               <Link
-                href="#hello"
+                href="/"
                 onClick={() => setIsOpen(false)}
                 className="border-b border-slate-800 py-4 pl-6 text-slate-50 hover:text-cyan-400"
               >
                 _hello
               </Link>
               <Link
-                href="#about"
+                href="/about"
                 onClick={() => setIsOpen(false)}
                 className="border-b border-slate-800 py-4 pl-6 text-slate-50 hover:text-cyan-400"
               >
                 _sobre-mim
               </Link>
               <Link
-                href="#projects"
+                href="/projects"
                 onClick={() => setIsOpen(false)}
                 className="border-b border-slate-800 py-4 pl-6 text-slate-50 hover:text-cyan-400"
               >
                 _projetos
               </Link>
               <Link
-                href="#contacts"
+                href="/contact"
                 onClick={() => setIsOpen(false)}
                 className="border-b border-slate-800 py-4 pl-6 text-slate-50 hover:text-cyan-400"
               >

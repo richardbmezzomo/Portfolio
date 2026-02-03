@@ -1,8 +1,10 @@
 import { CodeCarousel } from '@/components/CodeCarousel'
+import { BackgroundLayer } from '@/components/BackgroundLayer'
 
 export default function Home() {
   return (
     <>
+      <BackgroundLayer />
       <section
         id="hello"
         className="relative mx-auto flex min-h-[calc(100svh-8rem)] max-w-7xl items-center px-4 sm:px-6 lg:px-8"
@@ -21,7 +23,7 @@ export default function Home() {
             </p>
 
             {/* bloco "código" */}
-            <div className="mt-10 rounded-xl border border-slate-800 bg-slate-900/50 p-4 text-sm leading-relaxed shadow-[inset_0_0_0_1px_rgba(15,23,42,0.35)] sm:p-5 sm:text-base">
+            <div className="mt-10 rounded-xl bg-slate-900/50 p-4 text-sm leading-relaxed shadow-[inset_0_0_0_1px_rgba(15,23,42,0.35)] sm:p-5 sm:text-base">
               <p className="text-slate-400">
                 // Encontre meu perfil no Github:
               </p>
