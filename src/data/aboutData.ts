@@ -1,15 +1,19 @@
 import { AboutData } from '@/components/About/types'
 
 export const aboutData: AboutData = {
-  sections: [
+  groups: [
     {
-      id: 'pessoal',
-      label: 'pessoal',
-      items: [
+      id: 'informacoes-pessoais',
+      label: 'informacoes-pessoais',
+      sections: [
         {
-          id: 'bio',
-          label: 'bio.md',
-          content: `# Sobre mim
+          id: 'pessoal',
+          label: 'pessoal',
+          items: [
+            {
+              id: 'bio',
+              label: 'bio.md',
+              content: `# Sobre mim
 
 Olá! Eu sou **Richard B. Mezzomo**, Desenvolvedor Full Stack.
 
@@ -40,11 +44,11 @@ Atuo no ecossistema **JavaScript/TypeScript**, desenvolvendo aplicações web co
 ---
 
 Confira meus projetos para ver exemplos reais do meu trabalho!`,
-        },
-        {
-          id: 'interesses',
-          label: 'interesses.md',
-          content: `# Interesses
+            },
+            {
+              id: 'interesses',
+              label: 'interesses.md',
+              content: `# Interesses
 
 ## O que me motiva
 
@@ -63,11 +67,11 @@ Quando não estou programando, você pode me encontrar:
 - Surfando
 - Jogando tênis
 - Testando uma nova distro Linux`,
-        },
-        {
-          id: 'educacao',
-          label: 'educacao.md',
-          content: `# Formação
+            },
+            {
+              id: 'educacao',
+              label: 'educacao.md',
+              content: `# Formação
 
 ## Graduação — UNINTER
 **Análise e Desenvolvimento de Sistemas**
@@ -76,17 +80,17 @@ Quando não estou programando, você pode me encontrar:
 ---
 
 Estou em constante evolução, aprofundando meus estudos em desenvolvimento web moderno (Front-end e Back-end), arquitetura de aplicações e boas práticas de engenharia de software.`,
+            },
+          ],
         },
-      ],
-    },
-    {
-      id: 'profissional',
-      label: 'profissional',
-      items: [
         {
-          id: 'experiencia',
-          label: 'experiencia.md',
-          content: `# Experiência Profissional
+          id: 'profissional',
+          label: 'profissional',
+          items: [
+            {
+              id: 'experiencia',
+              label: 'experiencia.md',
+              content: `# Experiência Profissional
 
 ## Desenvolvedor Front-end — IPM Sistemas
 *03/2025 – Atual*
@@ -112,11 +116,11 @@ Estou em constante evolução, aprofundando meus estudos em desenvolvimento web 
 
 **Stack:** SQL, procedures, relatórios, React, Vite, JavaScript,
 TypeScript`,
-        },
-        {
-          id: 'habilidades',
-          label: 'habilidades.md',
-          content: `# 🛠️ Habilidades Técnicas
+            },
+            {
+              id: 'habilidades',
+              label: 'habilidades.md',
+              content: `# 🛠️ Habilidades Técnicas
 
 ## 🎨 Front-end
 
@@ -175,46 +179,15 @@ export function useDebounce<T>(value: T, delay = 300): T {
   return debouncedValue
 }
 \`\`\``,
+            },
+          ],
         },
       ],
     },
     {
-      id: 'contato',
-      label: 'contato',
-      items: [
-        {
-          id: 'email',
-          label: 'email.md',
-          content: `# Contato
-
-Fique à vontade para entrar em contato! Respondo em até **24 horas**.
-
-## Email
-
-**richard@exemplo.com**
-
----
-
-*Assunto sugerido:* "Contato via Portfolio"`,
-        },
-        {
-          id: 'redes',
-          label: 'redes-sociais.md',
-          content: `# Redes Sociais
-
-Me siga para acompanhar meus projetos!
-
-## Links
-
-- **GitHub:** [github.com/richardbmezzomo](https://github.com/richardbmezzomo)
-- **LinkedIn:** [linkedin.com/in/richardbmezzomo](https://linkedin.com/in/richardbmezzomo)
-- **Twitter:** [twitter.com/richardbmezzomo](https://twitter.com/richardbmezzomo)
-
----
-
-> Sempre aberto para colaborações e novas conexões!`,
-        },
-      ],
+      id: 'contatos',
+      label: 'contatos',
+      email: 'contato@richardbmezzomo.com',
     },
   ],
 }
