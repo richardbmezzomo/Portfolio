@@ -12,6 +12,21 @@ export interface AboutSection {
   items: AboutItem[]
 }
 
+export interface AboutGroup {
+  id: string
+  label: string
+  sections?: AboutSection[]
+  items?: AboutItem[]
+  email?: string
+}
+
 export interface AboutData {
-  sections: AboutSection[]
+  groups: AboutGroup[]
+}
+
+export interface ActivityPanel {
+  id: string
+  label: string
+  icon: string
+  position?: 'top' | 'bottom'
 }
