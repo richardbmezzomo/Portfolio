@@ -86,7 +86,7 @@ chars = "\\u001b\\r"`,
       {
         id: 'starship-config',
         label: 'starship.toml',
-        icon: 'terminal',
+        icon: 'starship',
         content: `"$schema" = 'https://starship.rs/config-schema.json'
 
 [aws]

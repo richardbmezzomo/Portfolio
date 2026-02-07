@@ -11,7 +11,6 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
 
-  // (opcional) trava o scroll do body quando o menu mobile está aberto
   useEffect(() => {
     if (isOpen) document.body.style.overflow = 'hidden'
     else document.body.style.overflow = ''
@@ -33,12 +32,14 @@ export default function Header() {
       className="fixed inset-x-0 top-0 z-50 h-16 border-b border-slate-700/80 bg-slate-900/80 text-slate-500 backdrop-blur supports-backdrop-filter:bg-slate-900/60"
     >
       <div className="mx-auto flex h-full items-center justify-between lg:justify-normal lg:gap-12">
-        <span className="px-6 text-slate-400">richard_b_mezzomo</span>
+        <Link href={'/'} className="px-6 text-slate-400">
+          richard_b_mezzomo
+        </Link>
 
         {/* Menu desktop */}
         <nav className="hidden flex-1 lg:flex">
           <Link href="/" className={handleActiveLink('/')}>
-            _hello
+            _inicio
           </Link>
           <Link href="/about" className={handleActiveLink('/about')}>
             _sobre-mim

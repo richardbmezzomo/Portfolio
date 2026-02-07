@@ -9,6 +9,7 @@ import {
   SiGhostery,
   SiAlacritty,
   SiArchlinux,
+  SiStarship,
 } from 'react-icons/si'
 
 export interface SettingsFile {
@@ -37,7 +38,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   ghostty: SiGhostery,
   alacritty: SiAlacritty,
   archlinux: SiArchlinux,
-  terminal: Terminal,
+  starship: SiStarship,
   monitor: Monitor,
   cpu: Cpu,
   json: FileJson,
@@ -49,7 +50,7 @@ const iconColors: Record<string, string> = {
   ghostty: 'text-purple-400',
   alacritty: 'text-orange-500',
   archlinux: 'text-cyan-400',
-  terminal: 'text-green-400',
+  starship: 'text-pink-400',
   monitor: 'text-slate-400',
   cpu: 'text-red-400',
   json: 'text-yellow-400',

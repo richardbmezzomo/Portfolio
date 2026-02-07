@@ -37,7 +37,7 @@ Atuo no ecossistema **JavaScript/TypeScript**, desenvolvendo aplicações web co
 | Área | Stack |
 |------|-------|
 | Front-end | React, Next.js, Tailwind, Shadcn/UI |
-| Back-end | Node.js, Express, NestJS, Fastify |
+| Back-end | Node.js, Express, NestJS, Fastify, Elysia, Bun |
 | Banco de dados | PostgreSQL |
 | Ferramentas | Git, Linux, Docker |
 
@@ -131,6 +131,7 @@ TypeScript`,
 | State & Data | Redux Toolkit, Zustand |
 | UI & Styling | Tailwind CSS, shadcn/ui, Radix UI |
 | Forms & Validation | React Hook Form (RHF), Zod |
+| Documentation | Storybook |
 | Rendering | SSR (Server-Side Rendering) |
 
 ## ⚙️ Back-end
@@ -158,27 +159,7 @@ TypeScript`,
 | CI/CD | GitLab CI/CD |
 | SO & Ferramentas | Linux, SSH, Git |
 
----
-
-## 💻 Exemplo de Código (TypeScript)
-
-\`\`\`ts
-import { useEffect, useState } from "react"
-
-/**
- * Hook para debounce de valores (útil para inputs, filtros e buscas)
- */
-export function useDebounce<T>(value: T, delay = 300): T {
-  const [debouncedValue, setDebouncedValue] = useState(value)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setDebouncedValue(value), delay)
-    return () => clearTimeout(timer)
-  }, [value, delay])
-
-  return debouncedValue
-}
-\`\`\``,
+`,
             },
           ],
         },
