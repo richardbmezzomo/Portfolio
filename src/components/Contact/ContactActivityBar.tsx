@@ -59,7 +59,7 @@ export const ContactActivityBar = () => {
                 className="flex items-center gap-2 py-1.5 text-sm text-slate-400 transition-colors hover:text-slate-200"
               >
                 <Mail className="h-4 w-4" />
-                <span>richard@exemplo.com</span>
+                <span>contato@richardbmezzomo.com</span>
               </a>
             </div>
           </AccordionContent>

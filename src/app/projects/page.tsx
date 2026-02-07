@@ -3,13 +3,8 @@
 import { useState, useMemo, useEffect } from 'react'
 import { FilterSidebar } from '@/components/Projects/FilterSidebar'
 import { ProjectCard } from '@/components/Projects/ProjectCard'
+import { ProjectCardSkeleton } from '@/components/Projects/ProjectCardSkeleton'
 import { Project } from '@/components/Projects/types'
-import {
-  pinnedRepos,
-  GITHUB_USERNAME,
-  customDescriptions,
-  liveUrls,
-} from '@/data/projectsData'
 
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([])
@@ -19,31 +14,10 @@ export default function Projects() {
   useEffect(() => {
     async function fetchPinnedRepos() {
       try {
-        const responses = await Promise.all(
-          pinnedRepos.map((repo) =>
-            fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repo}`),
-          ),
-        )
-
-        const repos = await Promise.all(
-          responses.map((res) => (res.ok ? res.json() : null)),
-        )
-
-        const projectsData: Project[] = repos.filter(Boolean).map((repo) => ({
-          id: repo.name,
-          name: repo.name,
-          description:
-            customDescriptions[repo.name] ||
-            repo.description ||
-            'Sem descrição',
-          image: `https://opengraph.githubassets.com/1/${GITHUB_USERNAME}/${repo.name}`,
-          language: repo.language || 'Outros',
-          technologies: repo.topics || [],
-          githubUrl: repo.html_url,
-          liveUrl: liveUrls[repo.name] || repo.homepage || undefined,
-        }))
-
-        setProjects(projectsData)
+        const res = await fetch('/api/projects')
+        if (!res.ok) throw new Error('Erro ao buscar projetos')
+        const data: Project[] = await res.json()
+        setProjects(data)
       } catch (error) {
         console.error('Erro ao buscar repositórios:', error)
       } finally {
@@ -76,8 +50,10 @@ export default function Projects() {
 
       <main className="overflow-y-auto p-6">
         {loading ? (
-          <div className="flex h-full items-center justify-center text-slate-500">
-            <p>Carregando projetos...</p>
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            {Array.from({ length: 6 }, (_, i) => (
+              <ProjectCardSkeleton key={i} />
+            ))}
           </div>
         ) : filteredProjects.length === 0 ? (
           <div className="flex h-full items-center justify-center text-slate-500">

@@ -14,6 +14,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -26,6 +27,10 @@ const contactSchema = z.object({
 type ContactFormValues = z.infer<typeof contactSchema>
 
 export default function Contact() {
+  const [status, setStatus] = useState<
+    'idle' | 'loading' | 'success' | 'error'
+  >('idle')
+
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -37,8 +42,22 @@ export default function Contact() {
 
   const { name, email, message } = form.watch()
 
-  function onSubmit(values: ContactFormValues) {
-    console.log(values)
+  async function onSubmit(values: ContactFormValues) {
+    setStatus('loading')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      })
+
+      if (!res.ok) throw new Error()
+
+      setStatus('success')
+      form.reset()
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -102,10 +121,24 @@ export default function Contact() {
                   )}
                 />
 
-                <div>
-                  <Button className="text-accent cursor-pointer">
-                    Enviar mensagem
+                <div className="flex flex-col gap-2">
+                  <Button
+                    className="text-accent cursor-pointer"
+                    disabled={status === 'loading'}
+                  >
+                    {status === 'loading' ? 'Enviando...' : 'Enviar mensagem'}
                   </Button>
+
+                  {status === 'success' && (
+                    <p className="text-sm text-emerald-400">
+                      Mensagem enviada com sucesso!
+                    </p>
+                  )}
+                  {status === 'error' && (
+                    <p className="text-sm text-red-400">
+                      Erro ao enviar. Tente novamente.
+                    </p>
+                  )}
                 </div>
               </form>
             </Form>

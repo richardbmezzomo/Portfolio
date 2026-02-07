@@ -5,14 +5,13 @@ import bg_image from '@/assets/background_blurs.svg'
 
 export const BackgroundLayer = () => {
   return (
-    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div className="pointer-events-none fixed inset-0 -z-10">
       <Image
         src={bg_image}
         alt=""
-        width={1128}
-        height={940}
+        fill
         priority
-        className="absolute top-1/2 right-0 translate-x-[10%] -translate-y-1/2"
+        className="object-cover object-right opacity-40"
       />
     </div>
   )

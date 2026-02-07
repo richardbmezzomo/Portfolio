@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br" className="overflow-x-clip">
+    <html lang="pt-br" className="overflow-x-hidden">
       <body className={`${firaCode.className} bg-slate-950`}>
         <Header />
         <main className="min-h-[calc(100svh-8rem)] pt-15 pb-16">

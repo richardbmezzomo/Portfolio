@@ -1,13 +1,3 @@
-import { Project } from '@/components/Projects/types'
-
-// Nomes dos repositórios pinados no GitHub
-export const pinnedRepos = [
-  'ZBMFGuru-frontend',
-  'ZBMFGuru',
-  'YoruFocus',
-  'api_fcs',
-]
-
 export const GITHUB_USERNAME = 'richardbmezzomo'
 
 export const languageColors: Record<string, string> = {
